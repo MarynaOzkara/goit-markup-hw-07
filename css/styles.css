@@ -13,6 +13,9 @@ ul{
 }
 img{
     display: block;
+    max-width: 100%;
+    height: auto;
+    width: 100%;
 }
 address{
     font-style: normal;
@@ -44,10 +47,11 @@ button{
     text-decoration: none;
 }
 .section{
-    width: 1158px;
+    /* width: 1158px; */
+    width: 100%;
     padding-left: 15px;
     padding-right: 15px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
 }
 .hidden{
     position: absolute;
@@ -152,21 +156,24 @@ button{
 }
 /* -----------HERO--------*/
 .hero{
-    max-width: 1440px;
+    /* max-width: 1440px; */
     margin: 0 auto;
     background-image: 
     var(--bg-gradient),
-    url(../images/people-office.jpg);
+    url(../images/mob-bg.jpg);
+    /* url(../images/people-office.jpg); */
     background-color: var(--main-title-color);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     text-align: center;
-    padding-top: 188px;
-    padding-bottom: 188px;   
+    /* padding-top: 188px;
+    padding-bottom: 188px;  */
+    padding-top: 112px;
+    padding-bottom: 112px;
 }
 .hero-title{
-    width: 496px;
+    /* width: 496px;
     font-weight: 700;
     font-size: 56px;
     line-height: 1.07;
@@ -174,7 +181,17 @@ button{
     color: var(--primary-white);
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 48px; 
+    margin-bottom: 48px;  */
+    width: 320px;
+    font-size: 36px;
+    line-height: 1.11;
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: capitalize;
+    color: var(--primary-white);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 72px;
 }
 .hero-btn{
     min-width: 169px;
@@ -754,7 +771,7 @@ button{
     left: 16px;
     top: 50%;
     transform: translateY(-50%);
-    color: var(--main-title-color);
+    fill: var(--main-title-color);
     transition: fill var(--transform-function);
 }
 .modal-input:focus + .input-icon{
