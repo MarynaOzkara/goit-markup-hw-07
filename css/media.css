@@ -1,9 +1,119 @@
 @media screen and (min-width: 428px) {
-    
+   
+   .section{
+    width: 426px;
+    margin: 0 auto;
+   } 
+
+    /* -----------BENEFITS--------*/
+
+   .benefits-item{
+    width: 396px;
+   }
+   
 }
+
+
 @media screen and (min-width: 768px) {
-    
+    .section{
+        width: 766px;
+    }
+
+     /* -----------HERO--------*/
+
+    .hero{
+        background-image:
+        var(--bg-gradient),
+        url(../images/tablet-bg.jpg);
+    }
+    .hero-title{
+        width: 496px;
+        font-size: 56px;
+        line-height: 1.07;
+        margin-bottom: 36px;
+    }
+     /* -----------TEAM--------*/
+     .team-item{
+        min-width: calc((100% - 24px) / 2);
+    }
+    .team-list{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 72px 24px;
+    }
+
+    /* -----------BENEFITS--------*/
+    .benefits-item{
+        /* min-width: calc((100% - 24px) / 2); */
+    }
+    .benefits-list{
+        /* display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 64px 24px; */
+    }
 }
+
+
 @media screen and (min-width: 1158px) {
-    
+    .section{
+        width: 1158px;
+    }
+
+    /* -----------HERO--------*/
+
+    .hero{
+        max-width: 1440px;
+        background-image:
+        var(--bg-gradient),
+        url(../images/people-office.jpg);
+        padding-top: 188px;
+        padding-bottom: 188px;
+    }
+    .hero-title{
+        margin-bottom: 48px;
+    }
+
+   /* -----------TEAM--------*/
+   .team{
+        padding-top: 120px;
+        padding-bottom: 120px;
+   }
+   .team-item{
+        min-width: calc((100% - 72px) / 4);
+        margin-bottom: 0;
+   }
+   .team-list{
+        display: flex;
+        gap: 24px;
+   }
+
+   /* -----------BENEFITS--------*/
+   .benefits{
+        padding-top: 120px;
+        padding-bottom: 120px;
+   }
+   .benefits-icon{
+        background-color: var(--light-grey);
+        border-radius: 4px;
+        height: 112px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 8px;
+   }
+   .benefits-list{
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+    }
+    .benefits-item {
+        min-width: calc((100% - 72px) / 4);
+    }
+    .benefits-title{
+        text-align: left;
+    }
+
+   
 }
