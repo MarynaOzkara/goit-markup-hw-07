@@ -7,16 +7,23 @@
 
     /* -----------BENEFITS--------*/
 
-   .benefits-item{
-    width: 396px;
-   }
-   
+  
+
+   /* -----------CUSTOMERS--------*/
+   .customers-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 72px 16px;
+}
+    /* -----------FOOTER--------*/
 }
 
+/* ------------------------------TABLET-------------------------*/
 
 @media screen and (min-width: 768px) {
     .section{
-        width: 766px;
+        width: 796px;
     }
 
      /* -----------HERO--------*/
@@ -32,9 +39,26 @@
         line-height: 1.07;
         margin-bottom: 36px;
     }
+    
+    /* -----------BENEFITS--------*/
+    .benefits-item{
+        /* min-width: calc((100% - 24px) / 2); */
+    
+    }
+    .benefits-list{
+         /* display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 72px 24px; */
+    }
+
      /* -----------TEAM--------*/
+     .team > .section{
+        max-width: 582px;
+     }
      .team-item{
-        min-width: calc((100% - 24px) / 2);
+        width: 264px;
+        /* min-width: calc((100% - 24px) / 2); */
     }
     .team-list{
         display: flex;
@@ -43,15 +67,43 @@
         gap: 72px 24px;
     }
 
-    /* -----------BENEFITS--------*/
-    .benefits-item{
-        /* min-width: calc((100% - 24px) / 2); */
+    /* -----------CUSTOMERS--------*/
+    .customers > .section{
+        max-width: 582px;
     }
-    .benefits-list{
-        /* display: flex;
+    .customers-list{
+        /* justify-content: center; */
+        gap: 72px 24px;
+    }
+    .customers-list-item{
+        width: 168px;
+    }
+
+    /* -----------FOOTER--------*/
+    .footer > .section{
+        max-width: 582px;
+    }
+    .flex{
         flex-direction: row;
         flex-wrap: wrap;
-        gap: 64px 24px; */
+        align-items: start;
+        gap: 72px 24px;
+    }
+    .footer-logo{
+        width: 264px;
+        text-align: left;
+    }
+    .footer-media{
+        text-align: left;
+
+    }
+    .footer-subscribe-text{
+        text-align: left;
+    }
+    .footer-form{
+        display: flex;
+        align-items: start;
+        gap: 24px;
     }
 }
 
@@ -115,5 +167,37 @@
         text-align: left;
     }
 
-   
+   /* -----------CUSTOMERS--------*/
+   .customers {
+        padding: 120px 0;
+   }
+    .customers-list {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+   }
+    /* -----------FOOTER--------*/
+    .footer{
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    .flex{
+        flex-direction: row;
+        align-items: start;
+    }
+    .footer-logo{
+        margin-right: 120px;
+    }
+    .footer-sosial{
+        margin-right: auto;
+    }
+    .input-subscribe{
+        width: 264px; 
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 1158px) {
+    .work{
+        display: none;
+    }
 }

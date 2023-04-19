@@ -47,11 +47,9 @@ button{
     text-decoration: none;
 }
 .section{
-    /* width: 1158px; */
     width: 100%;
     padding-left: 15px;
     padding-right: 15px;
-    /* margin: 0 auto; */
 }
 .hidden{
     position: absolute;
@@ -67,6 +65,9 @@ button{
 }
 .flex{
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 72px;
 }
 /*-----------HEADER--------*/
 .header{
@@ -342,7 +343,7 @@ button{
 /* -----------CUSTOMERS--------*/
 
 .customers {
-    padding: 120px 0;
+    padding: 96px 0;
 }
 
 .customers-title {
@@ -356,12 +357,12 @@ button{
 }
 .customers-list {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     gap: 24px;
 }
 
 .customers-list-item {
-    width: 168px;
+    width: 190px;
     height: 88px;
 }
 .customers-link {
@@ -494,27 +495,30 @@ button{
 /* -----------FOOTER--------*/
 .footer {
     background-color: var(--main-title-color);
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 96px;
+    padding-bottom: 96px;
 }
 .footer-logo-accent {
     color: var(--light-grey);
 }
 .foooter-descriptions {
-    width: 264px;
+    width: 268px;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--light-grey);
     margin-top: 16px;
+    
 }
 .footer-logo{
-    margin-right: 120px;
+    width: 268px;
+    text-align: center;
 }
 .footer-sosial{
-    margin-right: auto;
+    /* margin-right: auto; */
 }
 .footer-media{
+    text-align: center;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
@@ -553,10 +557,12 @@ button{
 }
 .footer-form{
     display: flex;
-    gap: 24px;
-
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
 }
 .footer-subscribe-text {
+    text-align: center;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
@@ -565,7 +571,7 @@ button{
     margin-bottom: 16px;
 }
 .input-subscribe {
-    width: 264px;
+    width: 398px;
     height: 40px;
     border: 1px solid var(--primary-white);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
