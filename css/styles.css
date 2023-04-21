@@ -95,15 +95,13 @@ button{
     color: var(--main-title-color)
 }
 .header-menu{
-    display: flex;
+    display: none;
+    /* display: flex;
     gap: 40px;
-    margin-left: 76px;
+    margin-left: 76px; */
     
 
 }
-.header-menu-item{
-}
-
 .header-menu-link{
     position: relative;
     font-weight: 500;
@@ -132,10 +130,10 @@ button{
     top: 43px;
     
 }
-.contact-list-item{   
-}
+
 .contact{
-    font-style: normal;  
+    display: none;
+    /* font-style: normal;   */
 }
 .contact-list{
     display: flex;
@@ -152,6 +150,110 @@ button{
 .contact-link:hover, 
 .contact-link:focus{
     color: var(--accent-color);
+}
+/* -----------MOB-MENU--------*/
+
+.mob-menu-btn{
+    display: block;
+    border: 0;
+    margin: left auto;
+    background-color: transparent;
+}
+.mob-menu-icon{
+    stroke: var(--main-title-color);
+    transition: stroke var(--transform-function);
+}
+.mob-menu-icon:focus, 
+.mob-menu-icon:hover{
+    stroke: var(--accent-color);
+}
+.mob-menu-modal {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    padding-top: 80px;
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transform: translateX(100%);
+}
+.mob-menu-modal .is-open{
+    transform: translateX(0);
+}
+.mob-close-btn {
+    position: absolute;
+    top: 24px;right: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--header-border);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    transition: background-color var(--transform-function);
+}
+.mob-close-btn:hover,
+.mob-close-btn:focus{
+    background-color: var(--accent-color);
+}
+.mob-close-icon{
+    fill: var(--main-title-color);
+    transition: fill var(--transform-function);
+}
+.mob-close-btn:hover .mob-close-icon,
+.mob-close-btn:focus .mob-close-icon{
+    fill: var(--primary-white);
+}
+
+.mob-menu-item {
+    margin-bottom: 40px;
+}
+.mob-menu-link {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.11;
+    letter-spacing: 0.02em;
+    text-transform: capitalize;
+    color: var(--main-title-color);
+}
+.mob-menu-link:hover, .mob-menu-link:focus{
+    color: var(--accent-color);
+}
+.mob-contacts {
+    padding-bottom: 48px;
+}
+.mob-contact-item {
+    padding-bottom: 40px;
+}
+.mob-tel-link {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.11;
+    letter-spacing: 0.02em;
+    text-transform: capitalize;
+    color: var(--accent-color);
+}
+.mob-mail-link{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: var(--main-text-color);
+}
+.mob-sosial-list{
+    display: flex;
+    gap: 56px;
 }
 /* -----------HERO--------*/
 .hero{
