@@ -1,9 +1,26 @@
 @media screen and (min-width: 428px) {
    
    .section{
-    width: 426px;
+    max-width: 428px;
+    padding-left: 15px;
+    padding-right: 15px;
     margin: 0 auto;
    } 
+
+   .hero{
+    background-image: 
+    var(--bg-gradient),
+    url(../images/tablet-bg.jpg);
+   }
+   @media (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+        .hero {
+            background-image: 
+            var(--bg-gradient), 
+            url(../images/tablet-bg@2x.jpg);
+  }
+}
 
     /* -----------BENEFITS--------*/
 
@@ -17,22 +34,98 @@
     gap: 72px 16px;
 }
     /* -----------FOOTER--------*/
+    .input-subscribe {
+        width: 398px;
 }
 
 /* ------------------------------TABLET-------------------------*/
 
 @media screen and (min-width: 768px) {
     .section{
-        width: 796px;
+        max-width: 768px;
     }
+    /* -----------HEDER--------*/
+    .header-navigation{
+        display: flex;
+        align-items: center;
+    }
+    .header-menu{
+        display: flex;
+        gap: 40px;
+        margin-left: 76px;
+        
+    
+    }
+    .header-menu-item{
+    }
+    
+    .header-menu-link{
+        position: relative;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        color: var(--main-title-color);
+        transition: color var(--transform-function);
+    }
+    .header-menu-link:hover,
+    .header-menu-link:focus{
+        color: var(--accent-color);
+    }
+    .active{
+        
+        color: var(--accent-color);
+    }
+    .active::after{
+        content: '';
+        width: 100%;
+        height: 4px;
+        background-color: var(--accent-color);
+        border-radius: 4px;
+        position: absolute;
+        left: 0;
+        top: 43px;
+        
+    }
+    .contact-list-item{   
+    }
+    .contact{
+        font-style: normal;  
+    }
+    .contact-list{
+        display: flex;
+        gap: 40px;
+    }
+    .contact-link{
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        color: var(--main-text-color);
+        transition: color var(--transform-function);
+    }
+    .contact-link:hover, 
+    .contact-link:focus{
+        color: var(--accent-color);
+    }
+
 
      /* -----------HERO--------*/
 
     .hero{
         background-image:
         var(--bg-gradient),
-        url(../images/tablet-bg.jpg);
+        url(../images/people-office.jpg);
     }
+    @media (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+        .hero {
+            background-image: 
+            var(--bg-gradient), 
+            url(../images/people-office@2x.jpg);
+  }
+}
     .hero-title{
         width: 496px;
         font-size: 56px;
@@ -42,12 +135,12 @@
     
     /* -----------BENEFITS--------*/
     .benefits-item{
+        width: 356px;
         /* min-width: calc((100% - 24px) / 2); */
     
     }
     .benefits-list{
-         /* display: flex;
-        flex-direction: row;
+        /* display: flex;
         flex-wrap: wrap;
         gap: 72px 24px; */
     }
@@ -108,18 +201,17 @@
 }
 
 
+
+
 @media screen and (min-width: 1158px) {
     .section{
-        width: 1158px;
+        max-width: 1158px;
     }
 
     /* -----------HERO--------*/
 
     .hero{
         max-width: 1440px;
-        background-image:
-        var(--bg-gradient),
-        url(../images/people-office.jpg);
         padding-top: 188px;
         padding-bottom: 188px;
     }
@@ -127,7 +219,14 @@
         margin-bottom: 48px;
     }
 
+    /* -----------WORK--------*/
+    .work{
+    }
+
    /* -----------TEAM--------*/
+   .team > .section{
+    max-width: 1158px;
+ }
    .team{
         padding-top: 120px;
         padding-bottom: 120px;
@@ -168,6 +267,9 @@
     }
 
    /* -----------CUSTOMERS--------*/
+   .customers > .section{
+    max-width: 1158px;
+}
    .customers {
         padding: 120px 0;
    }
@@ -177,6 +279,9 @@
         gap: 24px;
    }
     /* -----------FOOTER--------*/
+    .footer > .section{
+        max-width: 1158px;
+    }
     .footer{
         padding-top: 100px;
         padding-bottom: 100px;
@@ -196,7 +301,7 @@
     }
 }
 
-@media screen and (min-width: 0px) and (max-width: 1158px) {
+@media screen and (min-width: 1px) and (max-width: 1158px) {
     .work{
         display: none;
     }

@@ -48,8 +48,6 @@ button{
 }
 .section{
     width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
 }
 .hidden{
     position: absolute;
@@ -81,8 +79,8 @@ button{
     justify-content: space-between;
 }
 .header-navigation{
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    align-items: center; */
 }
 .logo{
     font-family: 'Raleway', sans-serif;
@@ -169,6 +167,15 @@ button{
     padding-top: 112px;
     padding-bottom: 112px;
 }
+@media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .hero {
+        background-image: 
+        var(--bg-gradient), 
+        url(../images/mob-bg@2x.jpg);
+    }
+}
 .hero-title{
     width: 320px;
     font-size: 36px;
@@ -211,10 +218,11 @@ button{
 .benefits-list{
     display: flex;
     flex-direction: column;
+    align-items: center ;
     gap: 72px;
 }
 .benefits-item {
-    min-width: 100%;
+    max-width: 290px;
     /* min-width: calc((100% - 72px) / 4); */
 }
 .benefits-icon{
@@ -244,7 +252,8 @@ button{
 }
 /* -----------WORK--------*/
 .work{
-    padding-bottom: 120px;
+
+    /* padding-bottom: 120px; */
 }
 .work-list{
     display: flex;
@@ -280,11 +289,12 @@ button{
 .team-list {
      display: flex;
      flex-direction: column;
+     align-items: center;
      gap: 72px; 
     
 }
 .team-item {
-    min-width: 264px;
+    max-width: 264px;
     background-color: var(--primary-white);
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
     border-radius: 0px 0px 4px 4px;
@@ -358,6 +368,7 @@ button{
 .customers-list {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 24px;
 }
 
@@ -571,7 +582,7 @@ button{
     margin-bottom: 16px;
 }
 .input-subscribe {
-    width: 398px;
+    width: 290px;
     height: 40px;
     border: 1px solid var(--primary-white);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
