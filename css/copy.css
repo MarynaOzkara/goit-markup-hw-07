@@ -46,6 +46,9 @@ button{
 .link{
     text-decoration: none;
 }
+.section{
+    width: 100%;
+}
 .hidden{
     position: absolute;
     width: 1px;
@@ -64,22 +67,19 @@ button{
     align-items: center;
     gap: 72px;
 }
-.section{
-    padding-left: 16px;
-    padding-right: 16px;
-}
-
-/*-------------------HEADER------------------*/
-
+/*-----------HEADER--------*/
 .header{
     padding-top: 24px;
-    padding-bottom: 22px;
+    padding-bottom: 24px;
     border-bottom: 1px solid var(--header-border);
     box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 .header-flex{
     display: flex;
     justify-content: space-between;
+}
+.header-navigation{
+    display: flex;
     align-items: center;
 }
 .logo{
@@ -95,17 +95,65 @@ button{
     color: var(--main-title-color)
 }
 .header-menu{
-    display: none;
+    display: flex;
+    gap: 40px;
+    margin-left: 76px;
+    
+
 }
-.contact{
-    display: none;
+.header-menu-link{
+    position: relative;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--main-title-color);
+    transition: color var(--transform-function);
+}
+.header-menu-link:hover,
+.header-menu-link:focus{
+    color: var(--accent-color);
+}
+.active{
+    
+    color: var(--accent-color);
+}
+.active::after{
+    content: '';
+    width: 100%;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 4px;
+    position: absolute;
+    left: 0;
+    top: 43px;
+    
 }
 
-/* -------------------MOB-MENU----------*/
+.contact{
+    font-style: normal; 
+}
+.contact-list{
+    display: flex;
+    gap: 40px;
+}
+.contact-link{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--main-text-color);
+    transition: color var(--transform-function);
+}
+.contact-link:hover, 
+.contact-link:focus{
+    color: var(--accent-color);
+}
+/* -----------MOB-MENU--------*/
+
 .mob-menu-btn{
     display: block;
     border: 0;
-    padding: 0;
     margin: left auto;
     background-color: transparent;
 }
@@ -118,36 +166,24 @@ button{
     stroke: var(--accent-color);
 }
 .mob-menu-modal {
-    position: fixed;
+    position: absolute;
     top: 0;
-    left: 0;
-    z-index: 100;
-    background-color: #fff;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity var(--transform-function), visibility var(--transform-function);
-}
-.mob-menu-modal.is-open{
-    opacity: 1;
-    visibility: visible;
-    pointer-events: none;
-}
-.mob-menu-container{
-    position: relative;
     width: 100vw;
     height: 100vh;
+    background-color: #fff;
     padding-top: 80px;
     padding-left: 40px;
-    padding-bottom: 40px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transform: translateX(100%);
+}
+.mob-menu-modal .is-open{
+    transform: translateX(0);
 }
 .mob-close-btn {
     position: absolute;
-    top: 24px;
-    right: 16px;
+    top: 24px;right: 24px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -159,15 +195,28 @@ button{
     height: 24px;
     transition: background-color var(--transform-function);
 }
+.mob-close-btn:hover,
+.mob-close-btn:focus{
+    background-color: var(--accent-color);
+}
+.mob-close-icon{
+    fill: var(--main-title-color);
+    transition: fill var(--transform-function);
+}
+.mob-close-btn:hover .mob-close-icon,
+.mob-close-btn:focus .mob-close-icon{
+    fill: var(--primary-white);
+}
+
 .mob-menu-item {
-    margin-bottom: 40px; 
+    margin-bottom: 40px;
 }
 .mob-menu-link {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
-    font-size: 28px;
-    line-height: 1.07;
+    font-size: 36px;
+    line-height: 1.11;
     letter-spacing: 0.02em;
     text-transform: capitalize;
     color: var(--main-title-color);
@@ -178,15 +227,15 @@ button{
 .mob-contacts {
     padding-bottom: 48px;
 }
-.mob-contact-item:not(:last-child) {
+.mob-contact-item {
     padding-bottom: 40px;
 }
 .mob-tel-link {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
-    font-size: 26px;
-    line-height: 1.07;
+    font-size: 36px;
+    line-height: 1.11;
     letter-spacing: 0.02em;
     text-transform: capitalize;
     color: var(--accent-color);
@@ -202,36 +251,9 @@ button{
 }
 .mob-sosial-list{
     display: flex;
-    justify-content: start;
-    gap: 30px;
+    gap: 56px;
 }
-.mob-sosial-item{
-    width: 40px;
-    height: 40px;
-
-}
-.mob-sosial-link{
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    background-color: var(--primary-brend);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color var(--transform-function);
-}
-.mob-sosial-link:hover, 
-.mob-sosial-link:focus{
-    background-color: var(--accent-color);
-}
-.mob-sosial-icon{
-    fill: var(--primary-white);
-}
-
-
-/* ----------------HERO-----------------*/
-
+/* -----------HERO--------*/
 .hero{
     margin: 0 auto;
     background-image: 
@@ -253,11 +275,11 @@ button{
         var(--bg-gradient), 
         url(../images/mob-bg@2x.jpg);
     }
-    
 }
 .hero-title{
-    font-size: 32px;
-    line-height: 1.07;
+    width: 320px;
+    font-size: 36px;
+    line-height: 1.11;
     text-align: center;
     letter-spacing: 0.02em;
     text-transform: capitalize;
@@ -288,25 +310,35 @@ button{
     background-color: var(--accent-color);
     cursor: pointer;
 }
-
-/* -----------------BENEFITS--------------*/
+/* -----------BENEFITS--------*/
 .benefits {
     padding-top: 96px;
     padding-bottom: 96px;
 }
-.benefits-item {
-    max-width: 100%;
+.benefits-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    gap: 72px;
 }
-.benefits-item:not(:last-child){
-    margin-bottom: 72px;
+.benefits-item {
+    max-width: 290px;
+    /* min-width: calc((100% - 72px) / 4); */
 }
 .benefits-icon{
     display: none;
+    /* background-color: var(--light-grey);
+    border-radius: 4px;
+    height: 112px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px; */
 }
 .benefits-title {
     font-weight: 500;
-    font-size: 36px;
-    line-height: 1.11;
+    font-size: 20px;
+    line-height: 1.2;
     letter-spacing: 0.02em;
     color: var(--main-title-color);
     text-align: center;
@@ -318,8 +350,28 @@ button{
     letter-spacing: 0.02em;
     color: var(--main-text-color);
 }
+/* -----------WORK--------*/
+.work{
 
-/* ----------------TEAM-----------------*/
+     padding-bottom: 120px;
+}
+.work-list{
+    display: flex;
+    gap: 24px;
+}
+.work-item{
+    min-width: calc((100% - 48px) / 3);
+}
+.work-title{
+    font-size: 36px;
+    line-height: 1.11;
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: capitalize;
+    color: var(--main-title-color);
+    margin-bottom: 72px;
+}
+/* -----------TEAM--------*/
 .team {
     background-color: var(--light-grey);
     padding-top: 96px;
@@ -334,17 +386,20 @@ button{
     color: var(--main-title-color);
     margin-bottom: 72px;
 }
-
+.team-list {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 72px; 
+    
+}
 .team-item {
-    margin: 0 auto;
     max-width: 264px;
     background-color: var(--primary-white);
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
     border-radius: 0px 0px 4px 4px;
 }
-.team-item:not(:last-child){
-    margin-bottom: 72px;
-}
+
 .team-item-wrap{
     padding: 32px 16px;
 }
@@ -370,6 +425,7 @@ button{
     justify-content: center;
     gap: 24px;
 }
+
 .team-sosial-item {
     width: 40px;
     height: 40px;
@@ -393,6 +449,7 @@ button{
     fill: var(--primary-white);
 }
 
+
 /* -----------CUSTOMERS--------*/
 
 .customers {
@@ -408,14 +465,15 @@ button{
         color: var(--main-title-color);
         margin-bottom: 72px;
 }
-.customers-list{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 72px 16px; 
+.customers-list {
+   /* display: flex;
+   flex-direction: column;
+   align-items: center; */
+   
 }
+
 .customers-list-item {
-    
-    width: calc((100% - 16px) / 2 );
+    width: 190px;
     height: 88px;
 }
 
@@ -456,7 +514,8 @@ button{
     justify-content: center;
     gap: 24px;
 }
-
+.filter-item {
+}
 .filter-btn {
     font-family: 'Roboto', sans-serif;
     font-style: normal;
@@ -567,6 +626,9 @@ button{
     width: 268px;
     text-align: center;
 }
+.footer-sosial{
+    /* margin-right: auto; */
+}
 .footer-media{
     text-align: center;
     font-weight: 500;
@@ -603,6 +665,8 @@ button{
 .footer-media-link:focus{
     background-color: var(--footer-green);
 }
+.subscribe {
+}
 .footer-form{
     display: flex;
     flex-direction: column;
@@ -619,7 +683,7 @@ button{
     margin-bottom: 16px;
 }
 .input-subscribe {
-    width: 288px;
+    width: 290px;
     height: 40px;
     border: 1px solid var(--primary-white);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
@@ -694,7 +758,7 @@ button{
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 96%;
+    width: 408px;
     background-color: var(--form-bg);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
@@ -733,15 +797,16 @@ button{
 /* -----------FORM--------*/
 
 .modal-title{
-    font-weight: 400;
-    font-size: 12px;
+    font-weight: 500;
+    font-size: 16px;
     line-height: 1.5;
     text-align: center;
     letter-spacing: 0.02em;
     color: var(--main-title-color);
     margin-bottom: 16px;
 }
-
+.modal-form{
+}
 .modal-input{
     width: 100%;
     height: 40px;
@@ -825,7 +890,7 @@ button{
     fill: var(--primary-brend);
 }
 .check-text{
-    font-size: 8px;
+    font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
     color: var(--customer-logo);
@@ -850,7 +915,7 @@ button{
 }
 .check-link{
     display: block;
-    font-size: 8px;
+    font-size: 12px;
     line-height: 1.33;
     letter-spacing: 0.04em;
     text-decoration-line: underline;
@@ -862,3 +927,326 @@ button{
     color: var(--accent-color);
 }
 
+
+/* ------------------------MEDIA------------------------------*/
+
+
+
+
+@media screen and (min-width: 428px) {
+   
+    .section{
+     max-width: 458px;
+     padding-left: 15px;
+     padding-right: 15px;
+     margin: 0 auto;
+    } 
+ 
+    .hero{
+     background-image: 
+     var(--bg-gradient),
+     url(../images/tablet-bg.jpg);
+    }
+    @media (min-device-pixel-ratio: 2),
+         (min-resolution: 192dpi),
+         (min-resolution: 2dppx) {
+         .hero {
+             background-image: 
+             var(--bg-gradient), 
+             url(../images/tablet-bg@2x.jpg);
+   }
+ }
+ 
+     /* -----------BENEFITS--------*/
+ 
+   
+ 
+    /* -----------CUSTOMERS--------*/
+    .customers-list {
+     display: flex;
+     /* flex-direction: row; */
+     flex-wrap: wrap;
+     align-items: center;
+     gap: 72px 16px;
+ }
+ .customers-list-item {
+     flex-basis: calc(100% / 2 - 16px) ;
+ }
+     /* -----------FOOTER--------*/
+     .input-subscribe {
+         width: 398px;
+ }
+}
+ 
+ /* ------------------------------TABLET-------------------------*/
+ 
+ @media screen and (min-width: 768px) {
+     .section{
+         max-width: 798px;
+     }
+     /* -----------HEDER--------*/
+     .header-navigation{
+         display: flex;
+         align-items: center;
+     }
+     .header-menu{
+         display: flex;
+         gap: 40px;
+         margin-left: 76px;
+         
+     
+     }
+     .header-menu-item{
+     }
+     
+     .header-menu-link{
+         position: relative;
+         font-weight: 500;
+         font-size: 16px;
+         line-height: 1.5;
+         letter-spacing: 0.02em;
+         color: var(--main-title-color);
+         transition: color var(--transform-function);
+     }
+     .header-menu-link:hover,
+     .header-menu-link:focus{
+         color: var(--accent-color);
+     }
+     .active{
+         
+         color: var(--accent-color);
+     }
+     .active::after{
+         content: '';
+         width: 100%;
+         height: 4px;
+         background-color: var(--accent-color);
+         border-radius: 4px;
+         position: absolute;
+         left: 0;
+         top: 43px;
+         
+     }
+     .contact-list-item{   
+     }
+     .contact{
+         font-style: normal;  
+     }
+     .contact-list{
+         display: flex;
+         gap: 40px;
+     }
+     .contact-link{
+         font-weight: 400;
+         font-size: 16px;
+         line-height: 1.5;
+         letter-spacing: 0.02em;
+         color: var(--main-text-color);
+         transition: color var(--transform-function);
+     }
+     .contact-link:hover, 
+     .contact-link:focus{
+         color: var(--accent-color);
+     }
+ 
+ 
+      /* -----------HERO--------*/
+ 
+     .hero{
+         background-image:
+         var(--bg-gradient),
+         url(../images/people-office.jpg);
+     }
+     @media (min-device-pixel-ratio: 2),
+         (min-resolution: 192dpi),
+         (min-resolution: 2dppx) {
+         .hero {
+             background-image: 
+             var(--bg-gradient), 
+             url(../images/people-office@2x.jpg);
+   }
+ }
+     .hero-title{
+         width: 496px;
+         font-size: 56px;
+         line-height: 1.07;
+         margin-bottom: 36px;
+     }
+     
+     /* -----------BENEFITS--------*/
+     .benefits-item{
+         width: 356px;
+         /* min-width: calc((100% - 24px) / 2); */
+     
+     }
+     .benefits-list{
+         /* display: flex;
+         flex-wrap: wrap;
+         gap: 72px 24px; */
+     }
+ 
+      /* -----------TEAM--------*/
+      .team > .section{
+         max-width: 582px;
+      }
+      .team-item{
+         width: 264px;
+         /* min-width: calc((100% - 24px) / 2); */
+     }
+     .team-list{
+         display: flex;
+         flex-direction: row;
+         flex-wrap: wrap;
+         gap: 72px 24px;
+     }
+ 
+     /* -----------CUSTOMERS--------*/
+     .customers > .section{
+         max-width: 582px;
+     }
+     .customers-list{
+         gap: 72px 24px;
+         justify-content: center;
+     }
+     .customers-list-item{
+         flex-basis: calc((100% - 48px) / 3 );
+         /* width: 168px; */
+     }
+ 
+     /* -----------FOOTER--------*/
+     .footer > .section{
+         max-width: 582px;
+     }
+     .flex{
+         flex-direction: row;
+         flex-wrap: wrap;
+         align-items: start;
+         gap: 72px 24px;
+     }
+     .footer-logo{
+         width: 264px;
+         text-align: left;
+     }
+     .footer-media{
+         text-align: left;
+ 
+     }
+     .footer-subscribe-text{
+         text-align: left;
+     }
+     .footer-form{
+         display: flex;
+         align-items: start;
+         gap: 24px;
+     }
+ }
+ 
+ 
+ 
+ 
+ @media screen and (min-width: 1158px) {
+     .section{
+         max-width: 1158px;
+     }
+ 
+     /* -----------HERO--------*/
+ 
+     .hero{
+         max-width: 1440px;
+         padding-top: 188px;
+         padding-bottom: 188px;
+     }
+     .hero-title{
+         margin-bottom: 48px;
+     }
+ 
+     /* -----------WORK--------*/
+     .work{
+     }
+ 
+    /* -----------TEAM--------*/
+    .team > .section{
+     max-width: 1158px;
+  }
+    .team{
+         padding-top: 120px;
+         padding-bottom: 120px;
+    }
+    .team-item{
+         min-width: calc((100% - 72px) / 4);
+         margin-bottom: 0;
+    }
+    .team-list{
+         display: flex;
+         gap: 24px;
+    }
+ 
+    /* -----------BENEFITS--------*/
+    .benefits{
+         padding-top: 120px;
+         padding-bottom: 120px;
+    }
+    .benefits-icon{
+         background-color: var(--light-grey);
+         border-radius: 4px;
+         height: 112px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         margin-bottom: 8px;
+    }
+    .benefits-list{
+         display: flex;
+         flex-direction: row;
+         gap: 24px;
+     }
+     .benefits-item {
+         min-width: calc((100% - 72px) / 4);
+     }
+     .benefits-title{
+         text-align: left;
+     }
+ 
+    /* -----------CUSTOMERS--------*/
+    .customers > .section{
+     max-width: 1158px;
+ }
+    .customers {
+         padding: 120px 0;
+    }
+     .customers-list {
+         display: flex;
+         justify-content: center;
+         gap: 24px;
+    }
+    .customers-list-item{
+     flex-basis: calc((100% - 120px) / 6);
+    }
+     /* -----------FOOTER--------*/
+     .footer > .section{
+         max-width: 1158px;
+     }
+     .footer{
+         padding-top: 100px;
+         padding-bottom: 100px;
+     }
+     .flex{
+         flex-direction: row;
+         align-items: start;
+     }
+     .footer-logo{
+         margin-right: 120px;
+     }
+     .footer-sosial{
+         margin-right: auto;
+     }
+     .input-subscribe{
+         width: 264px; 
+     }
+ }
+ 
+ @media screen and (max-width: 1157px) {
+     .work{
+         display: none;
+     }
+ }
