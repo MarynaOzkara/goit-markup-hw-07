@@ -23,6 +23,10 @@
 }
 
 /*-------------------HEADER------------------*/
+.mob-menu-link{
+    font-size: 36px;
+    line-height: 1.11;
+}
 .mob-tel-link{
     font-size: 36px;
     line-height: 1.11;
