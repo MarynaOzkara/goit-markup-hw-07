@@ -121,10 +121,9 @@ button{
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000;
+    z-index: 200;
     width: 100vw;
     height: 100vh;
-    z-index: 1000;
     background-color: #fff;
     opacity: 0;
     visibility: hidden;
@@ -134,7 +133,7 @@ button{
 .mob-menu-modal.is-open{
     opacity: 1;
     visibility: visible;
-    pointer-events: none;
+    pointer-events: auto;
 }
 .mob-menu-container{
     position: relative;
@@ -165,6 +164,7 @@ button{
     margin-bottom: 40px; 
 }
 .mob-menu-link {
+    cursor: pointer;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
