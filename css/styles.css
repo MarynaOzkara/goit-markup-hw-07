@@ -121,6 +121,7 @@ button{
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 1000;
     width: 100vw;
     height: 100vh;
     z-index: 1000;
@@ -138,7 +139,6 @@ button{
 .mob-menu-container{
     position: relative;
     height: 100%;
-    z-index: 1000;
     padding-top: 80px;
     padding-left: 40px;
     padding-bottom: 40px;
