@@ -57,6 +57,12 @@
     
 }
 
+/* -----------PORTFOLIO--------*/
+
+.portfolio-item {
+    width: 396px; 
+}
+
 /* -----------------BENEFITS----------------*/
 
 .benefits-item {
@@ -223,6 +229,33 @@
     width: calc((100% - 48px) / 3 );
 }
 
+/* -----------PORTFOLIO-FILTER--------*/
+
+.portfolio{
+    padding-top: 64px;
+    padding-bottom: 96px;
+}
+.portfolio-filter {
+    margin-bottom: 64px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+.filter-btn{
+    padding: 12px 24px;
+}
+
+/* -----------PORTFOLIO--------*/
+
+.portfolio-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 72px 24px;
+}
+.portfolio-item {
+    width: 356px; 
+}
+
 /* -----------FOOTER--------*/
 
 .footer > .section{
@@ -380,6 +413,26 @@
        .customers-list-item{
         width: calc((100% - 120px) / 6);
        }
+
+    /* -----------PORTFOLIO-FILTER--------*/   
+       .portfolio{
+            padding-top: 100px;
+            padding-bottom: 120px;
+       }
+       .portfolio-filter {
+            margin-bottom: 72px;
+            justify-content: center;
+        }
+
+        /* -----------PORTFOLIO--------*/
+
+        .portfolio-list{
+            gap: 48px 24px;
+            
+        }
+        .portfolio-item {
+            width: 360px; 
+        }
 
     /* -----------FOOTER--------*/
     .footer > .section{
